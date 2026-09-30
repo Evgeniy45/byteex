@@ -5,6 +5,7 @@ import { FaqSection } from './components/FaqSection';
 import { HeroSection } from './components/HeroSection';
 import { HowToOrderSection } from './components/HowToOrderSection';
 import { InfoBanner } from './components/InfoBanner';
+import { PressSection } from './components/PressSection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { TopBar } from './components/TopBar';
 
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <TopBar />
       <HeroSection />
+      <PressSection />
       <BenefitsSection />
       <AboutFounderSection />
       <HowToOrderSection />
