@@ -7,11 +7,11 @@ import theEcoHub from '../../assets/icons/TheEcoHub.svg';
 import trendHunter from '../../assets/icons/TrendHunter.svg';
 
 const PRESS_LOGOS = [
-  { id: 1, src: ecoStylist, alt: 'Eco-Stylist' },
-  { id: 2, src: canadianLiving, alt: 'Canadian Living' },
-  { id: 3, src: jullianHarris, alt: 'Jillian Harris' },
-  { id: 4, src: theEcoHub, alt: 'The Eco Hub' },
-  { id: 5, src: trendHunter, alt: 'Trend Hunter' },
+  { id: 'eco-stylist', src: ecoStylist, alt: 'Eco-Stylist' },
+  { id: 'canadian-living', src: canadianLiving, alt: 'Canadian Living' },
+  { id: 'jillian-harris', src: jullianHarris, alt: 'Jillian Harris' },
+  { id: 'the-eco-hub', src: theEcoHub, alt: 'The Eco Hub' },
+  { id: 'trend-hunter', src: trendHunter, alt: 'Trend Hunter' },
 ];
 
 export const PressSection = () => {
@@ -26,7 +26,7 @@ export const PressSection = () => {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="press-section__logo"
+                className={`press-section__logo press-section__logo--${logo.id}`}
               />
             </div>
           ))}
