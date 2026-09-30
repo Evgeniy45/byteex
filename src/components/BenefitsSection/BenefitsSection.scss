@@ -1,1 +1,285 @@
-@use '../../styles/variables.scss' as *;
+@use '../../styles/variables' as *;
+
+.benefits-section {
+  width: 100%;
+  background-color: $color-main;
+  padding: 60px 0 100px;
+  overflow: hidden;
+
+  @media (max-width: 1000px) {
+    padding: 40px 0 70px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 56px;
+
+    @media (max-width: 1200px) and (min-width: 1001px) {
+      align-items: center;
+      gap: 36px;
+    }
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 520px;
+
+    @media (max-width: 1000px) {
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    font-size: $font-size-h2;
+    font-weight: 700;
+    line-height: 1.15;
+    color: $color-primary;
+    margin: 0 0 44px;
+
+    @media (max-width: 1000px) {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: $bp-mobile) {
+      font-size: $font-size-h1-mb;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $bp-mobile) {
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $color-bg-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+
+    img {
+      width: 18px;
+      height: 18px;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__item-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $color-primary;
+    margin-bottom: 8px;
+
+    @media (max-width: $bp-mobile) {
+      font-size: 18px;
+    }
+  }
+
+  &__item-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: $color-text-secondary;
+    margin: 0;
+
+    @media (max-width: $bp-mobile) {
+      font-size: 14px;
+    }
+  }
+
+  &__gallery {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 540px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 1000px) {
+      max-width: 500px;
+    }
+  }
+
+  &__caption {
+    font-size: 14px;
+    line-height: 1.2;
+    color: $color-text-secondary;
+    margin-top: 14px;
+    text-align: center;
+  }
+}
+
+.benefits-slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+
+    img {
+      width: 16px;
+      height: auto;
+      display: block;
+    }
+
+    &:hover {
+      opacity: 0.65;
+    }
+
+    &--left {
+      left: -38px;
+
+      @media (max-width: 600px) {
+        left: 6px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        padding: 8px;
+      }
+    }
+
+    &--right {
+      right: -38px;
+
+      @media (max-width: 600px) {
+        right: 6px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        padding: 8px;
+      }
+    }
+  }
+
+  &__main-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 480 / 580;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    display: block;
+    animation: fadeIn 0.35s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0.4;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__thumbnails {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: calc(100% - 24px);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__thumb-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &--active {
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &:hover:not(&--active) {
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: $bp-mobile) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
