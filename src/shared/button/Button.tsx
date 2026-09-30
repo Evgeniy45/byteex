@@ -5,13 +5,26 @@ interface ButtonProps {
   text: string;
   onClick?: () => void;
   className?: string;
+  hasArrow?: boolean;
 }
 
-export const Button = ({ text, onClick, className = '' }: ButtonProps) => {
+export const Button = ({
+  text,
+  onClick,
+  className = '',
+  hasArrow = true,
+}: ButtonProps) => {
   return (
     <button className={`button ${className}`} onClick={onClick}>
-      {text}
-      <img src={ButtonArrowIcon} alt="" />
+      <span>{text}</span>
+      {hasArrow && (
+        <img
+          src={ButtonArrowIcon}
+          alt=""
+          aria-hidden="true"
+          className="button__arrow"
+        />
+      )}
     </button>
   );
 };
