@@ -37,7 +37,6 @@
 
   &__body {
     display: flex;
-    // Вирівнюємо по верхньому краю, щоб карусель не підстрибувала вище заголовка
     align-items: flex-start;
     justify-content: space-between;
     gap: 32px;
@@ -140,7 +139,6 @@
     }
   }
 
-  // --- Карусель ---
   &__carousel {
     flex: 0 0 auto;
     display: flex;
@@ -148,12 +146,11 @@
     justify-content: center;
     gap: 10px;
     max-width: 100%;
-    // Зсуваємо карусель вниз, щоб вона починалася нижче за верхній край заголовка
     padding-top: 24px;
 
     @media (max-width: 1000px) {
       width: 100%;
-      padding-top: 0; // Скидаємо відступ, коли карусель знизу
+      padding-top: 0;
     }
   }
 
