@@ -1,1 +1,219 @@
-@use '../../styles/variables.scss' as *;
+@use '../../styles/variables' as *;
+
+.hero-section {
+  width: 100%;
+  overflow: hidden;
+
+  .container {
+    @media (max-width: 1250px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: $bp-tablet) {
+      padding: 0 24px;
+    }
+
+    @media (max-width: $bp-mobile) {
+      padding: 0 16px;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    padding-top: 32px;
+
+    @media (max-width: 1000px) {
+      display: flex;
+      justify-content: center;
+      padding-top: 24px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  &__body {
+    display: flex;
+    // Вирівнюємо по верхньому краю, щоб карусель не підстрибувала вище заголовка
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 62px 0;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 0 48px;
+      gap: 36px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    max-width: 480px;
+    min-width: 320px;
+
+    @media (max-width: 1000px) {
+      max-width: 580px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-h1;
+    line-height: 1.15;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 28px;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $bp-mobile) {
+      font-size: $font-size-h1-mb;
+    }
+  }
+
+  &__list,
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      list-style-type: none;
+      text-align: left;
+    }
+  }
+
+  &__icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $color-bg-light;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+  }
+
+  &__list-text,
+  p {
+    font-size: $font-size-text;
+    line-height: 1.4;
+    color: $color-text-main;
+    margin: 0;
+
+    @media (max-width: $bp-mobile) {
+      font-size: $font-size-text-mb;
+    }
+  }
+
+  &__actions {
+    margin-top: 38px;
+
+    @media (max-width: 1000px) {
+      margin-top: 24px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  // --- Карусель ---
+  &__carousel {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 100%;
+    // Зсуваємо карусель вниз, щоб вона починалася нижче за верхній край заголовка
+    padding-top: 24px;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      padding-top: 0; // Скидаємо відступ, коли карусель знизу
+    }
+  }
+
+  &__image-col {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+
+    &--side {
+      width: 208px;
+      aspect-ratio: 208 / 316;
+      height: auto;
+
+      @media (max-width: 1250px) {
+        width: 165px;
+      }
+
+      @media (max-width: 1000px) {
+        display: block;
+        width: 180px;
+      }
+
+      @media (max-width: 650px) {
+        width: 140px;
+      }
+
+      @media (max-width: $bp-mobile) {
+        display: none;
+      }
+    }
+
+    &--center {
+      width: 260px;
+      aspect-ratio: 260 / 422;
+      height: auto;
+      z-index: 2;
+
+      @media (max-width: 1250px) {
+        width: 215px;
+      }
+
+      @media (max-width: 1000px) {
+        width: 240px;
+      }
+
+      @media (max-width: 650px) {
+        width: 190px;
+      }
+
+      @media (max-width: $bp-mobile) {
+        width: 220px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+}

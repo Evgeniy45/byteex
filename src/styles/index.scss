@@ -1,1 +1,30 @@
 @use './variables.scss' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: inherit;
+  color: $color-text-main;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 102px;
+
+  @media (max-width: $bp-tablet) {
+    padding: 0 24px;
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: 0 16px;
+  }
+}

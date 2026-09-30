@@ -1,0 +1,51 @@
+@use '../../styles/variables.scss' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 64px;
+  gap: 20px;
+
+  background-color: $color-primary;
+  color: $color-main;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  img {
+    width: 18px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    opacity: 0.92;
+
+    img {
+      transform: translateX(4px);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: 16px 32px;
+    font-size: 16px;
+    gap: 14px;
+    width: 100%;
+  }
+}
