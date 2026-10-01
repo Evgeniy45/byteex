@@ -6,8 +6,8 @@ Responsive landing page developed based on a Figma design specification with hea
 
 ## 🔗 Links
 
-- **Live Demo**: [https://evgeniy45.github.io/byteex/](#)
-- **Repository**: [https://github.com/Evgeniy45/byteex](#)
+- **Live Demo**: https://evgeniy45.github.io/byteex/
+- **Repository**: https://github.com/Evgeniy45/byteex
 
 ---
 
@@ -53,11 +53,11 @@ Ensure you have installed:
    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
    cd your-repo-name
 
-2. **Install dependencies:
+2. **Install dependencies**:
 
    npm install
 
-3. **Configure Environment Variables:
+3. **Configure Environment Variables:**
    Create a .env file in the root directory by duplicating .env.example:
 
    cp .env.example .env
@@ -67,13 +67,13 @@ Ensure you have installed:
    VITE_CONTENTFUL_SPACE_ID=your_contentful_space_id
    VITE_CONTENTFUL_ACCESS_TOKEN=your_contentful_delivery_token
 
-4. **Run development server:
+4. **Run development server:**
 
    npm run dev
 
    Open http://localhost:5173 in your browser to view the application.
 
-5. **Build for Production:
+5. **Build for Production:**
 
    npm run build
 
