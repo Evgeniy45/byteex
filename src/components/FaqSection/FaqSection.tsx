@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect } from 'react';
 import './FaqSection.scss';
 import { Button } from '../../shared/button/Button';
@@ -81,36 +80,39 @@ export const FaqSection = () => {
             <h2 className="faq-section__title">Frequently asked questions.</h2>
 
             <div className="faq-section__accordion">
-              {faqList.map((item, index) => {
-                const isOpen = openIndex === index;
-
-                return (
-                  <div
-                    key={item.id}
-                    className={`faq-item ${isOpen ? 'faq-item--open' : ''}`}
-                  >
-                    <button
-                      className="faq-item__header"
-                      onClick={() => toggleFaq(index)}
-                      aria-expanded={isOpen}
+              {isLoading ? (
+                <p className="faq-section__loading">Loading FAQ...</p>
+              ) : (
+                faqList.map((item, index) => {
+                  const isOpen = openIndex === index;
+                  return (
+                    <div
+                      key={item.id}
+                      className={`faq-item ${isOpen ? 'faq-item--open' : ''}`}
                     >
-                      <h3 className="faq-item__question">{item.question}</h3>
-                      <div className="faq-item__icon">
-                        <img
-                          src={isOpen ? minusIcon : plusIcon}
-                          alt={isOpen ? 'Collapse' : 'Expand'}
-                        />
-                      </div>
-                    </button>
+                      <button
+                        className="faq-item__header"
+                        onClick={() => toggleFaq(index)}
+                        aria-expanded={isOpen}
+                      >
+                        <h3 className="faq-item__question">{item.question}</h3>
+                        <div className="faq-item__icon">
+                          <img
+                            src={isOpen ? minusIcon : plusIcon}
+                            alt={isOpen ? 'Collapse' : 'Expand'}
+                          />
+                        </div>
+                      </button>
 
-                    <div className="faq-item__answer-wrapper">
-                      <div className="faq-item__answer-inner">
-                        <p className="faq-item__answer-text">{item.answer}</p>
+                      <div className="faq-item__answer-wrapper">
+                        <div className="faq-item__answer-inner">
+                          <p className="faq-item__answer-text">{item.answer}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })
+              )}
             </div>
 
             <div className="faq-section__mobile-action">
