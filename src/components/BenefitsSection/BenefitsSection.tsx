@@ -9,8 +9,7 @@ import wavesIcon from '../../assets/icons/waves.svg';
 import arrowLeftIcon from '../../assets/icons/arrowLeft.svg';
 import arrowRightIcon from '../../assets/icons/arrowRight.svg';
 
-import womanReadBook from '../../assets/images/woman-read-book.webp';
-import womanGreyTShort from '../../assets/images/woman-grey-t-short.webp';
+import womanGreyTShort from '../../assets/images/woman-short.webp';
 import mainSlideImg from '../../assets/images/woman-dark-white-dress.webp';
 
 interface BenefitItem {
@@ -53,13 +52,13 @@ const BENEFITS_DATA: BenefitItem[] = [
 
 const SLIDES = [
   { id: 0, src: mainSlideImg, title: 'White Robe' },
-  { id: 1, src: womanReadBook, title: 'Woman Reading Book' },
-  { id: 2, src: womanGreyTShort, title: 'Woman in Grey T-Shirt' },
-  { id: 3, src: mainSlideImg, title: 'White Robe' },
+  { id: 1, src: womanGreyTShort, title: 'Woman Reading Book' },
+  { id: 2, src: mainSlideImg, title: 'Woman in Grey T-Shirt' },
+  { id: 3, src: womanGreyTShort, title: 'White Robe' },
   { id: 4, src: mainSlideImg, title: 'White Robe' },
-  { id: 5, src: mainSlideImg, title: 'White Robe' },
+  { id: 5, src: womanGreyTShort, title: 'White Robe' },
   { id: 6, src: mainSlideImg, title: 'White Robe' },
-  { id: 7, src: mainSlideImg, title: 'White Robe' },
+  { id: 7, src: womanGreyTShort, title: 'White Robe' },
 ];
 
 export const BenefitsSection = () => {

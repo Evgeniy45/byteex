@@ -203,13 +203,9 @@
   }
 
   &__btn {
-    min-width: 240px;
-    margin-bottom: 12px;
-
-    @media (max-width: $bp-tablet) {
-      width: 100%;
-      max-width: 320px;
-    }
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 14px;
   }
 
   &__reviews {

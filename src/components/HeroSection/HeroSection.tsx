@@ -3,8 +3,10 @@ import logo from '../../assets/logo.svg';
 import dayNightIcon from '../../assets/icons/dayNight.svg';
 import packagingIcon from '../../assets/icons/packaging.svg';
 import wavesIcon from '../../assets/icons/waves.svg';
+import starIcon from '../../assets/icons/star.svg';
+import userAvatar from '../../assets/images/user-avatar.webp';
 
-import womanReadBook from '../../assets/images/woman-read-book.webp';
+import womanBlackShort from '../../assets/images/woman-black-short.webp';
 import womanGreyTShort from '../../assets/images/woman-grey-t-short.webp';
 import womanWhiteDress from '../../assets/images/woman-dark-white-dress.webp';
 
@@ -55,7 +57,41 @@ export const HeroSection = () => {
             </ul>
 
             <div className="hero-section__actions">
-              <Button text="Customize Your Outfit" />
+              <Button
+                text="Customize Your Outfit"
+                hasArrow={true}
+                className="hero-section__btn"
+              />
+
+              <div className="hero-review-card">
+                <div className="hero-review-card__header">
+                  <img
+                    src={userAvatar}
+                    alt="Amy P."
+                    className="hero-review-card__avatar"
+                  />
+                  <div className="hero-review-card__meta">
+                    <span className="hero-review-card__name">Amy P.</span>
+                    <div
+                      className="hero-review-card__stars"
+                      aria-label="5 out of 5 stars"
+                    >
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <img key={i} src={starIcon} alt="" aria-hidden="true" />
+                      ))}
+                    </div>
+                    <span className="hero-review-card__badge">
+                      One of 500+ 5 Star Reviews Online
+                    </span>
+                  </div>
+                </div>
+                <p className="hero-review-card__text">
+                  Overjoyed with my Loungewear set. I have the jogger and the
+                  sweatshirt. Quality product on every level. From the
+                  compostable packaging, to the supplied washing bag, even the
+                  garments smells like fresh herbs when I first held them.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -76,8 +112,8 @@ export const HeroSection = () => {
             </div>
             <div className="hero-section__image-col hero-section__image-col--side">
               <img
-                src={womanReadBook}
-                alt="Model reading book on sofa"
+                src={womanBlackShort}
+                alt="Model in black short"
                 className="hero-section__img"
               />
             </div>
